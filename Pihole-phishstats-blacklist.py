@@ -9,7 +9,7 @@ def main():
 
 
     while Loop_control:
-        url = 'https://phishstats.info:2096/api/phishing?_where=(date,gt,'+TS+')&_p='+str(page_tracker)+'&_size=100'
+        url = 'https://phishstats.info:2096/api/phishing?_size=100&_where=(date,gt,'+TS+')&_p='+str(page_tracker)
         RESPONSE = requests.get(url)
         JSON_PAYLOAD = []
         JSON_PAYLOAD = RESPONSE.json()
