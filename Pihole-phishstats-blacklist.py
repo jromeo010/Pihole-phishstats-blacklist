@@ -1,9 +1,9 @@
-import requests, time
+import requests, time, re
 
 
 def main():
 
-    TS = '2021-05-10T12:00:00.000Z'
+    TS = '2021-05-19T12:00:00.000Z'
     Loop_control = True
     page_tracker = 1
 
@@ -16,8 +16,9 @@ def main():
         page_tracker += 1
 
         for dictionary in JSON_PAYLOAD:
+            test = re.findall(r'(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]',dictionary['url'])
             print(dictionary['url'])
-
+            print(test[0])
 
         if not len(JSON_PAYLOAD)== 100:
             Loop_control = False
