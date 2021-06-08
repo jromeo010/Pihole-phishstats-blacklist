@@ -1,5 +1,5 @@
 import requests,time,re,os
-
+#comment
 def delta_file():
     DELTA_FILE = 'phishstats_delta.txt'
     TS = ''
