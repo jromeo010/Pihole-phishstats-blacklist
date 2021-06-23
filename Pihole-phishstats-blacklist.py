@@ -51,6 +51,7 @@ def Fetch_Results(TS):
         time.sleep(5)
         page_tracker += 1
 
+    DOMAIN_LIST = list(set(DOMAIN_LIST))
     return DOMAIN_LIST
 
 def main():
@@ -59,7 +60,7 @@ def main():
     os.chdir(dname)
 
     TS = delta_file()
-    DOMAIN_LIST = list(set(Fetch_Results(TS)))#remove duplicates from list
+    DOMAIN_LIST = Fetch_Results(TS)#remove duplicates from list
     print(DOMAIN_LIST)
 
 if __name__ == '__main__':
